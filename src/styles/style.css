@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*navbar*/
+  .navbar_nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 30px;
+  }
+  .navbar_link a{
+    padding: 20px;
+  }
+  .brand_logo img{
+    max-width: 20px;
+  }
