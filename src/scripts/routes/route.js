@@ -4,7 +4,7 @@ import Kontak from "../../views/pages/kontak";
 import Riwayat from "../../views/pages/riwayat";
  
 const routes = {
-  '/' : '/dashboard',
+  '/': Dashboard,
   '/dashboard': Dashboard,
   '/riwayat': Riwayat,
   '/kontak' : Kontak,

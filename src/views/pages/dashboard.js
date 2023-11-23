@@ -7,8 +7,8 @@ const Dashboard = {
       <hr>
   </div>
   <div class="white">
-
   </div>
+  <div class="aduan_container">
   <form>
       <h2>Buat Laporan Anda Disini</h2>
       <a href="#/guide">Perhatikan Cara Menyampaikan Aduan yang Baik dan Benar</a>
@@ -28,6 +28,7 @@ const Dashboard = {
           <button class="report">Lapor!</button>
       </div>
   </form>
+  </div>
       `;
     },
    
