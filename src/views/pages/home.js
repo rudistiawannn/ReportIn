@@ -1,20 +1,20 @@
 // core version + navigation, pagination modules:
 import Swiper from 'swiper/bundle';
 
-import { landingPage } from "../templates/template-creator";
+import { landingPage, register } from "../templates/template-creator";
 const Home = {
   async render() {
     return `
       <div class="onobarding_container"></div>
+      <div class="register_container">
+      <h3>Daftar</h3>
+      </div>
       `;
   },
 
   async afterRender() {
     const container = document.querySelector(".onobarding_container");
     container.innerHTML += landingPage();
-  
-    const progressCircle = document.querySelector(".autoplay-progress svg");
-    const progressContent = document.querySelector(".autoplay-progress span");
     const swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,
       centeredSlides: true,
@@ -34,6 +34,10 @@ const Home = {
         
       }
     });
+
+    const registerContainer = document.querySelector(".register_container");
+    registerContainer.innerHTML += register();
+
   },
 };
 
