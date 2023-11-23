@@ -1,6 +1,12 @@
 import 'regenerator-runtime';
 import '../styles/style.css';
+import '../styles/home.css';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import App from '../views/app';
+
  
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
