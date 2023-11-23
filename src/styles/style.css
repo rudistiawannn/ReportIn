@@ -130,3 +130,68 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+
+
+/*navbar*/
+.navbar_nav {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 30px;
+}
+.navbar_link a{
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: black;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  /* border: 2px solid #EE2B47; */
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #EE2B47;
+}
+.navbar_link a:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #EE2B47;
+}
+
+.navbar_link a:active {
+  transform: scale(0.9);
+}
+.brand_logo img{
+  max-width: 20px;
+}
+.login {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #EE2B47;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #EE2B47;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #EE2B47;
+}
+
+.login:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #EE2B47;
+}
+
+.login:active {
+  transform: scale(0.9);
+}
