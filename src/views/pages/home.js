@@ -5,10 +5,21 @@ import { landingPage, register } from "../templates/template-creator";
 const Home = {
   async render() {
     return `
-      <div class="onobarding_container"></div>
-      <div class="register_container">
-      <h3>Daftar</h3>
-      </div>
+    <section>
+    <div class="container">
+        <div class="contentwrapper">
+            <div class="onobarding_container"></div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container blue">
+        <div class="contentwrapper">
+        <div class="register_container" id="registerContainer"></div>
+        
+        </div>
+    </div>
+</section>
       `;
   },
 
@@ -37,7 +48,6 @@ const Home = {
 
     const registerContainer = document.querySelector(".register_container");
     registerContainer.innerHTML += register();
-
   },
 };
 

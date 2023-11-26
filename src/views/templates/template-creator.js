@@ -2,10 +2,8 @@ const landingPage = () => `
     <div class="title">
         <h2>Lindungi Generasi Kita dari Bahaya Judi Online!</h2>
         <p>Maraknya situs judi online adalah masalah yang serius. Laporkan situs-situs tersebut dan kita akan mengambil tindakan tegas. Yuk laporkan sekarang!</p>
-       <a href="#register"><button class="lapor">Lapor Sekarang</button></a>
+       <a href="#registerContainer"><button class="lapor">Lapor Sekarang</button></a>
     </div>
-
-    <!-- Swiper -->
     <div class="swiper mySwiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -41,21 +39,22 @@ const landingPage = () => `
 </div>
       `
 const register = () => `
-<form id="register" class="form">
-    <span class="signup">Sign Up</span>
-    <input type="email" placeholder="Email address" class="form--input">
-    <input type="password" placeholder="Password" class="form--input">
-    <input type="password" placeholder="Confirm password" class="form--input">
-    
-    <div class="form--marketing">
-        <input id="okayToEmail" type="checkbox">
-        <label for="okayToEmail" class="checkbox">
-          I want to join the newsletter
+<h2>Daftar Sekarang</h2>
+<form class="form">
+    <div class="header">Sign In</div>
+    <div class="inputs">
+        <input placeholder="Email" class="input" type="text">
+        <input placeholder="Password" class="input" type="password">
+    <div class="checkbox-container">
+        <label class="checkbox">
+        <input type="checkbox" id="checkbox">
         </label>
+        <label for="checkbox" class="checkbox-text">Remember me</label>
     </div>
-    <button class="form--submit">
-        Sign up
-    </button>
+    <button class="sigin-btn">Submit</button>
+    <a class="forget" href="#">Forget password ?</a>
+    <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
 </form>
 `
 
