@@ -11,9 +11,9 @@ const Dashboard = {
   <div class="aduan_container">
   <form>
       <h2>Buat Laporan Anda Disini</h2>
-      <a href="#/guide">Perhatikan Cara Menyampaikan Aduan yang Baik dan Benar</a>
+      <a href="#/guide">Perhatikan Cara Menyampaikan Aduan yang Baik dan Benar</a> <br>
       <label>Tautan Aduan:</label>
-      <input class="tautan" type="text" placeholder="Contoh: http://tautan-situs.com/">
+      <input class="tautan" type="text" placeholder="Contoh: http://tautan-situs.com/"> <br>
       <label>Alasan:</label>
       <input class="desk" type="text" placeholder="bla bla bla">
       <p>Deskripsikan alasan detail anda disini</p>
