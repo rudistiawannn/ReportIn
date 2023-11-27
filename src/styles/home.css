@@ -12,7 +12,7 @@
     padding-left: 50px;
 }
 .title h2{
-    font-size:3rem;
+    font-size:2rem;
     display: flex;
     text-align: left;
 }
@@ -151,8 +151,8 @@
   .header {
     position: relative;
     background-clip: border-box;
-    background-color: #1e88e5;
-    background-image: linear-gradient(to top right,#1e88e5,#42a5f5);
+    background-color: #EE2B47;
+    background-image: linear-gradient(to top right,#EE2B47,#EE2B47);
     margin: 10px;
     border-radius: 0.75rem;
     overflow: hidden;
@@ -201,7 +201,7 @@
   }
   
   .input:focus {
-    border: 1px solid #1e88e5;
+    border: 1px solid #EE2B47;
   }
   
   .checkbox-container {
@@ -241,8 +241,8 @@
     line-height: 1rem;
     text-align: center;
     padding: .75rem 1.5rem;
-    background-color: #1e88e5;
-    background-image: linear-gradient(to top right,#1e88e5,#42a5f5);
+    background-color: #EE2B47;
+    background-image: linear-gradient(to top right,#EE2B47,#EE2B47);
     border-radius: .5rem;
     width: 100%;
     outline: 0;
@@ -264,10 +264,20 @@
     font-weight: 700;
     font-size: .875rem;
     margin-left: .25rem;
-    color: #1e88e5;
+    color: #EE2B47;
   }
   
   .forget {
     text-align: right;
     font-weight: 600;
+  }
+
+  hr {
+    width: 50%;
+    border: 1px solid #EE2B47;
+    margin: 20px auto;
+  }
+
+  .login_container {
+    margin-top: 2rem;
   }

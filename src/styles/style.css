@@ -205,3 +205,12 @@ cursor: pointer;
 .login:active {
   transform: scale(0.9);
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 9rem;
+  height: 5rem;
+  background-color: #EE2B47;
+}

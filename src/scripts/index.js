@@ -1,6 +1,7 @@
 import 'regenerator-runtime';
 import '../styles/style.css';
 import '../styles/home.css';
+import '../styles/news.css'
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';

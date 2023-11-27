@@ -1,0 +1,28 @@
+.card_news {
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    height: 248px;
+    background-color: #e2e3e5;
+  }
+
+  .card_img img{
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .desc_news, .title_news { 
+    padding: 10px;
+    margin-left: 20px;
+  }
+  .selengkapnya{
+    height: 40px;
+    padding: 5px;
+    background-color: #EE2B47;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }

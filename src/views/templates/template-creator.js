@@ -40,6 +40,26 @@ const landingPage = () => `
       `
 const register = () => `
 <h2>Daftar Sekarang</h2>
+<hr>
+<form class="form">
+    <div class="header">Sign In</div>
+    <div class="inputs">
+        <input placeholder="Nama" class="input" type="text">
+        <input placeholder="Email" class="input" type="text">
+        <input placeholder="Password" class="input" type="password">
+    <div class="checkbox-container">
+        <label class="checkbox">
+        <input type="checkbox" id="checkbox">
+        </label>
+        <label for="checkbox" class="checkbox-text">Remember me</label>
+    </div>
+    <button class="sigin-btn">Submit</button>
+    <a class="forget" href="#">Forget password ?</a>
+    <p class="signup-link">Sudah punya akun? <a href="#/login">Login</a></p>
+    </div>
+</form>
+`
+const login = () => `
 <form class="form">
     <div class="header">Sign In</div>
     <div class="inputs">
@@ -53,9 +73,39 @@ const register = () => `
     </div>
     <button class="sigin-btn">Submit</button>
     <a class="forget" href="#">Forget password ?</a>
-    <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+    <p class="signup-link">Belum punya akun? <a href="/">Daftar</a></p>
     </div>
 </form>
 `
 
-export {landingPage, register};
+const newsList = () => `
+<div class="card_news">
+                        <div class="card_img">
+                            <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" alt="">
+                        </div>
+                        <div class="card_content">
+                            <p class="title_news">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p class="desc_news">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae alias omnis nemo amet, vero magni excepturi ut dicta repellat maxime consequatur dolor corporis, rem, animi ducimus! Error commodi harum eligendi!
+                            Ratione maiores quisquam eos itaque nulla omnis saepe explicabo voluptatibus, eveniet accusantium distinctio autem, ut sequi a dolore vel eum dolorem odit mollitia pariatur at corrupti similique harum nobis? Inventore!</p>
+                        </div>
+                        <div class="selengkapnya">
+                            <a href="#">Selengkapnya</a>
+                        </div>
+                    </div>
+                    <div class="card_news">
+                        <div class="card_img">
+                            <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" alt="">
+                        </div>
+                        <div class="card_content">
+                            <p class="title_news">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p class="desc_news">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae alias omnis nemo amet, vero magni excepturi ut dicta repellat maxime consequatur dolor corporis, rem, animi ducimus! Error commodi harum eligendi!
+                            Ratione maiores quisquam eos itaque nulla omnis saepe explicabo voluptatibus, eveniet accusantium distinctio autem, ut sequi a dolore vel eum dolorem odit mollitia pariatur at corrupti similique harum nobis? Inventore!</p>
+                        </div>
+                        <div class="selengkapnya">
+                            <a href="#">Selengkapnya</a>
+                        </div>
+                    </div>
+
+`
+
+export {landingPage, register, login, newsList};
