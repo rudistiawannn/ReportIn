@@ -5,6 +5,7 @@ import Riwayat from "../../views/pages/riwayat";
 import Home from "../../views/pages/home";
 import Login from "../../views/pages/login";
 import News from "../../views/pages/News";
+import detailNews from "../../views/pages/detail_news";
  
 const routes = {
   '/': Home,
@@ -14,6 +15,8 @@ const routes = {
   '/faq' : Faq,
   '/login' : Login,
   '/news' : News,
+  '/detail': detailNews
+
 
 };
  

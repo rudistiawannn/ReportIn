@@ -84,7 +84,7 @@ const newsList = () => `
                             <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" alt="">
                         </div>
                         <div class="card_content">
-                            <p class="title_news">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h4 class="title_news">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
                             <p class="desc_news">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae alias omnis nemo amet, vero magni excepturi ut dicta repellat maxime consequatur dolor corporis, rem, animi ducimus! Error commodi harum eligendi!
                             Ratione maiores quisquam eos itaque nulla omnis saepe explicabo voluptatibus, eveniet accusantium distinctio autem, ut sequi a dolore vel eum dolorem odit mollitia pariatur at corrupti similique harum nobis? Inventore!</p>
                         </div>
@@ -108,4 +108,23 @@ const newsList = () => `
 
 `
 
-export {landingPage, register, login, newsList};
+const detailNewsTemplate = () => `
+<div class="card_detail">
+<div class="image_detail"></div>
+ <div class="content_detail">
+   <a href="#">
+     <span class="title_detail">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     </span>
+   </a>
+
+   <p class="desc_detail">
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+     dolores, possimus pariatur animi temporibus nesciunt praesentium 
+   </p>
+ </div>
+</div>
+
+`
+
+export {landingPage, register, login, newsList, detailNewsTemplate};
