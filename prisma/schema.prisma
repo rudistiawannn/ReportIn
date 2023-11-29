@@ -11,9 +11,19 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String 
-  gender String
-  age Int
+  id         Int          @id @default(autoincrement())
+  email      String       @unique
+  name       String
+  gender     String
+  age        Int
+  ReportData ReportData[]
+}
+
+model ReportData {
+  data_id     Int    @id @default(autoincrement())
+  subject     String
+  description String
+  file        String
+  name        User   @relation(fields: [userId], references: [id])
+  userId      Int
 }
