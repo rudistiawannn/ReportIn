@@ -1,9 +1,18 @@
 # ReportIn BackEnd
 + Framework : ExpressJs
-+ Node Version : ???
-+ RDBMS : PostgreeSQL
++ Architecture : REST API
++ ORM : Prisma
++ RDBMS : PostgreeSQL 16
++ CORS
++ Node Version : 20.10.0 LTS
 + Design Database : awaiting
 
 # Resource API 
 + Berita : https://api-berita-indonesia.vercel.app/cnn/nasional
 + Searching : on progress
+
+# Tools
++ CORS
++ dotEnv
++ EsLint
++ nodemon
