@@ -2,14 +2,13 @@
 + Framework : ExpressJs
 + Architecture : REST API
 + ORM : Prisma
-+ RDBMS : PostgreeSQL 16
-+ CORS
++ RDBMS : PostgreSQL 16
 + Node Version : 20.10.0 LTS
-+ Design Database : awaiting
++ Desain Database : Awaiting 
 
 # Resource API 
 + Berita : https://api-berita-indonesia.vercel.app/cnn/nasional
-+ Searching : on progress
++ Searching : On progress
 
 # Tools
 + CORS
