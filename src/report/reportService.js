@@ -1,38 +1,21 @@
 /* eslint-disable linebreak-style */
-const prisma = require('../database/index');
+
+const {
+  findReport,
+  sendReport,
+  findReportById,
+  editReport,
+  removeReport,
+} = require('./reportRepository');
 
 const getAllReport = async () => {
-  const allReport = await prisma.user.findMany({
-    include: {
-      ReportData: true,
-    },
-  });
-
+  const allReport = await findReport();
   return allReport;
 };
 
 const createdReport = async (data, userId) => {
-  const createReport = await prisma.reportData.create({
-    data: {
-      subject: data.subject,
-      description: data.description,
-      file: data.file,
-      name: {
-        connect: {
-          // eslint-disable-next-line radix
-          id: parseInt(userId),
-        },
-      },
-    },
-    select: {
-      id: true,
-      subject: true,
-      description: true,
-      file: true,
-      name: true,
-      userId: true,
-    },
-  });
+  // eslint-disable-next-line radix
+  const createReport = await sendReport(data, userId);
   return createReport;
 };
 
@@ -40,66 +23,23 @@ const getReportById = async (reportId) => {
   if (typeof reportId !== 'number') {
     throw Error('ID is not a number!!');
   }
-
-  const report = await prisma.reportData.findUnique({
-    where: {
-      // eslint-disable-next-line radix
-      id: reportId,
-    },
-    select: {
-      subject: true,
-      description: true,
-      file: true,
-    },
-  });
-
+  const report = await findReportById(reportId);
   if (!report) {
     throw Error('Report is not found!!');
   }
-
   return report;
 };
 
 const deletedReport = async (reportId) => {
   await getReportById(reportId);
 
-  const deleteReport = await prisma.reportData.delete({
-    where: {
-      // eslint-disable-next-line radix
-      id: parseInt(reportId),
-    },
-  });
+  const deleteReport = await removeReport(reportId);
   return deleteReport;
 };
 
-const updatedReport = async (newData, reportId) => {
-  const updateReport = await prisma.reportData.update({
-    data: {
-      subject: newData.subject,
-      description: newData.description,
-      file: newData.file,
-    },
-    where: {
-      // eslint-disable-next-line radix
-      id: parseInt(reportId),
-    },
-  });
+const updatedReportById = async (newData, reportId) => {
+  const updateReport = await editReport(newData, reportId);
   return updateReport;
-};
-
-const updatedSingleReport = async (newData, reportId) => {
-  const updateSingleReport = await prisma.reportData.update({
-    data: {
-      subject: newData.subject,
-      description: newData.description,
-      file: newData.file,
-    },
-    where: {
-      // eslint-disable-next-line radix
-      id: parseInt(reportId),
-    },
-  });
-  return updateSingleReport;
 };
 
 module.exports = {
@@ -107,6 +47,5 @@ module.exports = {
   getReportById,
   createdReport,
   deletedReport,
-  updatedReport,
-  updatedSingleReport,
+  updatedReportById,
 };

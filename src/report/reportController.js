@@ -10,8 +10,7 @@ const {
   getReportById,
   createdReport,
   deletedReport,
-  updatedReport,
-  updatedSingleReport,
+  updatedReportById,
 } = require('./reportService');
 
 router.get('/', async (req, res) => {
@@ -43,7 +42,8 @@ router.get('/:reportId', async (req, res) => {
 router.post('/:userId', async (req, res) => {
   try {
     const data = req.body;
-    const userId = req.params.userId;
+    // eslint-disable-next-line radix
+    const userId = parseInt(req.params.userId);
     const createReport = await createdReport(data, userId);
     res.send({
       message: 'Rerport is created!!',
@@ -79,7 +79,7 @@ router.put('/:reportId', async (req, res) => {
       });
       return;
     }
-    const updateReport = await updatedReport(data, reportId);
+    const updateReport = await updatedReportById(data, reportId);
     res.send({
       message: 'Report has been updated',
       data: updateReport,
@@ -95,7 +95,7 @@ router.patch('/:reportId', async (req, res) => {
     const data = req.body;
     // eslint-disable-next-line radix
     const reportId = parseInt(req.params.reportId);
-    const updateReport = await updatedSingleReport(data, reportId);
+    const updateReport = await updatedReportById(data, reportId);
     res.send({
       message: 'Report has been updated',
       data: updateReport,
