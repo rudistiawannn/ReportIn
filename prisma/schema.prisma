@@ -20,7 +20,7 @@ model User {
 }
 
 model ReportData {
-  data_id     Int    @id @default(autoincrement())
+  id          Int    @id @default(autoincrement())
   subject     String
   description String
   file        String
