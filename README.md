@@ -18,6 +18,6 @@
 + nodemon
 
 # Todo
-+ Feature : - Upload File 
-+ Authentication : All feature
-+ Authorization : All feature
++ Feature : - Upload file 
++ Authentication : * feature
++ Authorization :  * feature
