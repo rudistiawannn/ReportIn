@@ -7,44 +7,30 @@ const router = express.Router();
 
 const {
   getAllReport,
-  getReportById,
+  getHistoryById,
   createdReport,
   deletedReport,
   updatedReportById,
 } = require('./reportService');
 
+const uploadFile = require('./reportMidleware');
+
 router.get('/', async (req, res) => {
   try {
-    const news = await getAllReport();
-    res.send(news);
+    const report = await getAllReport();
+    res.send(report);
   } catch (error) {
     res.status(400).send(error.message);
   }
 });
 
-router.get('/:reportId', async (req, res) => {
-  try {
-    // eslint-disable-next-line radix
-    const reportId = parseInt(req.params.reportId);
-    const getNewsById = await getReportById(reportId);
-    if (!getNewsById) {
-      res.send({
-        status: 400,
-        message: 'Report is undefined',
-      });
-    }
-    res.send(getNewsById);
-  } catch (error) {
-    res.status(400).send(error.message);
-  }
-});
-
-router.post('/:userId', async (req, res) => {
+router.post('/:userId', uploadFile, async (req, res) => {
   try {
     const data = req.body;
+    const file = req.file.path;
     // eslint-disable-next-line radix
     const userId = parseInt(req.params.userId);
-    const createReport = await createdReport(data, userId);
+    const createReport = await createdReport(data, userId, file);
     res.send({
       message: 'Rerport is created!!',
       data: createReport,
@@ -90,6 +76,23 @@ router.put('/:reportId', async (req, res) => {
   }
 });
 
+router.get('/:reportId', async (req, res) => {
+  try {
+    // eslint-disable-next-line radix
+    const reportId = parseInt(req.params.reportId);
+    const getHistory = await getHistoryById(reportId);
+    if (!getHistory) {
+      res.send({
+        status: 400,
+        message: 'Report is undefined',
+      });
+    }
+    res.send(getHistory);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
+
 router.patch('/:reportId', async (req, res) => {
   try {
     const data = req.body;
@@ -104,6 +107,10 @@ router.patch('/:reportId', async (req, res) => {
   } catch (error) {
     res.status(400).send(error.message);
   }
+});
+
+router.get('/{any}', (req, res) => {
+  res.send('Page is not found!!');
 });
 
 module.exports = router;

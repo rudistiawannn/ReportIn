@@ -1,5 +1,5 @@
 # ReportIn BackEnd
-+ Framework : ExpressJs
++ Framework : Express.Js
 + Architecture : REST API
 + Layerred Architecture : Service Repository
 + ORM : Prisma
@@ -16,8 +16,13 @@
 + dotEnv
 + EsLint
 + nodemon
++ multer
+
+# Update
++ CRUD report (patch method)
++ History report
++ Upload file (authenticate complete)
 
 # Todo
-+ Feature : - Upload file 
-+ Authentication : * feature
-+ Authorization :  * feature
++ Authentication : all feature
++ Authorization :  all feature

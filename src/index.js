@@ -11,13 +11,17 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 const app = express();
-// const PORT = process.env.PORT;
+// const PORT  = process.env.PORT;
 const PORT = 5000;
 
 app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Ini halaman utama');
+});
+
+app.get('/{any}', (req, res) => {
+  res.send('Page is not found!!');
 });
 
 const productController = require('./report/reportController');
