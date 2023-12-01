@@ -22,7 +22,7 @@ const createdReport = async (data, userId, _file) => {
   return createReport;
 };
 
-const getReportById = async (reportId) => {
+const getHistoryById = async (reportId) => {
   if (typeof reportId !== 'number') {
     throw Error('ID is not a number!!');
   }
@@ -34,7 +34,7 @@ const getReportById = async (reportId) => {
 };
 
 const deletedReport = async (reportId) => {
-  await getReportById(reportId);
+  await getHistoryById(reportId);
 
   const deleteReport = await removeReport(reportId);
   return deleteReport;
@@ -68,10 +68,10 @@ const filesFilter = (req, file, cb) => {
 
 module.exports = {
   getAllReport,
-  getReportById,
   createdReport,
   deletedReport,
   updatedReportById,
+  getHistoryById,
   diskStorage,
   filesFilter,
 };

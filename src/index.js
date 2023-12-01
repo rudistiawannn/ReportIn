@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
   res.send('Ini halaman utama');
 });
 
+app.get('/{any}', (req, res) => {
+  res.send('Page is not found!!');
+});
+
 const productController = require('./report/reportController');
 
 app.use('/report', productController);

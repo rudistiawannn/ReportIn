@@ -19,6 +19,10 @@
 + multer
 
 # Todo
-+ Feature : - Upload file 
-+ Authentication : * feature
-+ Authorization :  * feature
++ Authentication : all feature
++ Authorization :  all feature
+
+# Update
++ CRUD report (patch method)
++ History report
++ Upload file (authenticate complete)
