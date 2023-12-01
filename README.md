@@ -16,6 +16,7 @@
 + dotEnv
 + EsLint
 + nodemon
++ multer
 
 # Todo
 + Feature : - Upload file 

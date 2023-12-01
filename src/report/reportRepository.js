@@ -10,12 +10,12 @@ const findReport = () => {
   return getAllReport;
 };
 
-const sendReport = async (data, userId) => {
+const sendReport = async (data, userId, _file) => {
   const createReport = await prisma.reportData.create({
     data: {
       subject: data.subject,
       description: data.description,
-      file: data.file,
+      file: _file,
       name: {
         connect: {
           // eslint-disable-next-line radix

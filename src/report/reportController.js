@@ -13,6 +13,8 @@ const {
   updatedReportById,
 } = require('./reportService');
 
+const uploadFile = require('./reportMidleware');
+
 router.get('/', async (req, res) => {
   try {
     const news = await getAllReport();
@@ -39,12 +41,13 @@ router.get('/:reportId', async (req, res) => {
   }
 });
 
-router.post('/:userId', async (req, res) => {
+router.post('/:userId', uploadFile, async (req, res) => {
   try {
     const data = req.body;
+    const file = req.file.path;
     // eslint-disable-next-line radix
     const userId = parseInt(req.params.userId);
-    const createReport = await createdReport(data, userId);
+    const createReport = await createdReport(data, userId, file);
     res.send({
       message: 'Rerport is created!!',
       data: createReport,
