@@ -8,8 +8,8 @@
 + Relationship : + [User] one-to-many [ReportData]
 
 # Resource API 
-+ Berita : https://api-berita-indonesia.vercel.app/cnn/nasional
-+ Searching : On progress
++ News : http://api.mediastack.com/v1/news?access_key=7758f217cec633bce32bce6f5835481e&countries=id&keywords=judi+online
++ Searching : http://api.mediastack.com/v1/news?access_key=7758f217cec633bce32bce6f5835481e&countries=id&keywords={keyword}
 
 # Tools
 + CORS
