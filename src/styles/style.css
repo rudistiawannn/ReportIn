@@ -43,14 +43,14 @@
     background-color: #EE2B47;
     color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
-    font-size: 52px;
+    font-size: 1.5rem;
     text-align: center;
-    padding: 40px 0px 200px 0px;
+    padding: 40px 0px 20px 0px;
   }
 
   .red p {
-    margin-bottom: 20px;
-    font-size: 28px;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
   }
   hr {
     border: 2.5px solid white;
@@ -60,7 +60,7 @@
 
   .white {
     background-color: white;
-    height: 1000px;
+    height: 100vh;
 
   }
 .aduan_container{

@@ -3,7 +3,8 @@
     border-radius: 20px;
     display: flex;
     height: 248px;
-    background-color: #e2e3e5;
+    background-color: #ffffff;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
   }
 
   .card_img img{

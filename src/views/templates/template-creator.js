@@ -127,4 +127,54 @@ const detailNewsTemplate = () => `
 
 `
 
-export {landingPage, register, login, newsList, detailNewsTemplate};
+const riwayatTemplate = () =>`
+<div class="card_riwayat">
+<div class="riwayat_tgl">
+<p class="tgl">17 februari 2023</p>
+</div>
+<div class="riwayat_detail">
+<p class="riwayat_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
+</div>
+<div class="riwayat_img">
+    <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" alt="">
+</div>
+</div>
+
+<div class="card_riwayat">
+<div class="riwayat_tgl">
+<p class="tgl">17 februari 2023</p>
+</div>
+<div class="riwayat_detail">
+<p class="riwayat_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
+</div>
+<div class="riwayat_img">
+    <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" alt="">
+</div>
+</div>
+`
+
+const faqTemplate = () =>`
+<div class="faq-item">
+<div class="faq-question">
+<button class="expand-button">+</button>
+  <h3>Apa itu website pelapor judi online?</h3>
+</div>
+<div class="faq-answer">
+  <p>Answer to question 1 goes here...</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<button class="expand-button">+</button>
+  <h3>Apa yang terjadi setelah saya melapor?</h3>
+</div>
+<div class="faq-answer">
+  <p>Answer to question 2 goes here...</p>
+</div>
+</div>
+`
+
+export {landingPage, register, login, newsList, detailNewsTemplate, riwayatTemplate, faqTemplate};

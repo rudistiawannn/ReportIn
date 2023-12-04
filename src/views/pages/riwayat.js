@@ -1,13 +1,24 @@
+import { riwayatTemplate } from "../templates/template-creator";
 const Riwayat = {
     async render() {
       return `
-        <h2>Riwayatttt TESSSS</h2>
+      <div class="red">
+      <h2>Layanan Aduan Situs Judi Online</h2>
+      <p>Laporkan Situs Judi Online yang Anda Temukan</p>
+      <hr>
+  </div>
+  <div class="riwayat_container">
+  <div class="riwayat_heading"><h3>Riwayat Laporan</h3><hr></div>
+      <div class="content_riwayat">
+      
+      </div>
+  </div>
       `;
     },
    
     async afterRender() {
-        console.log("tes");
-      // Fungsi ini akan dipanggil setelah render()
+      const registerContainer = document.querySelector(".content_riwayat");
+      registerContainer.innerHTML += riwayatTemplate();
     },
   };
    
