@@ -20,7 +20,10 @@ router.get('/', async (req, res) => {
     const report = await getAllReport();
     res.send(report);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).send({
+      status: 400,
+      message: 'Report is not found!!',
+    });
   }
 });
 
@@ -36,7 +39,10 @@ router.post('/:userId', uploadFile, async (req, res) => {
       data: createReport,
     });
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).send({
+      status: 400,
+      message: 'Report is not found!!',
+    });
   }
 });
 
@@ -50,7 +56,10 @@ router.delete('/:reportId', async (req, res) => {
       status: 200,
     });
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).send({
+      status: 400,
+      message: 'Report is not found!!',
+    });
   }
 });
 
@@ -72,7 +81,10 @@ router.put('/:reportId', async (req, res) => {
       status: 200,
     });
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).send({
+      status: 400,
+      message: 'Report is not found!!',
+    });
   }
 });
 
@@ -80,6 +92,9 @@ router.get('/:reportId', async (req, res) => {
   try {
     // eslint-disable-next-line radix
     const reportId = parseInt(req.params.reportId);
+    // if (reportId !== 'number') {
+    //   return res.send('GAGAL');
+    // }
     const getHistory = await getHistoryById(reportId);
     if (!getHistory) {
       res.send({
@@ -89,7 +104,10 @@ router.get('/:reportId', async (req, res) => {
     }
     res.send(getHistory);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).send({
+      status: 400,
+      message: 'Report is not found!!',
+    });
   }
 });
 
@@ -105,12 +123,16 @@ router.patch('/:reportId', async (req, res) => {
       status: 200,
     });
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).send({
+      status: 400,
+      message: 'Report is not found!!',
+    });
   }
 });
 
-router.get('/{any}', (req, res) => {
-  res.send('Page is not found!!');
-});
+// router.use('/', (req, res, next) => {
+//   res.send('Page it\'s not found!! ');
+//   // next();
+// });
 
 module.exports = router;

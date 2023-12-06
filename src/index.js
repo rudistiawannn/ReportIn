@@ -20,14 +20,14 @@ app.get('/', (req, res) => {
   res.send('Ini halaman utama');
 });
 
-app.get('/{any}', (req, res) => {
-  res.send('Page is not found!!');
-});
-
 const productController = require('./report/reportController');
 
 app.use('/report', productController);
 
 app.listen(PORT, () => {
   console.log(`Express API running in port ${PORT}`);
+});
+
+app.use((req, res) => {
+  res.send('Page is not found!!');
 });
