@@ -26,6 +26,7 @@ const getHistoryById = async (reportId) => {
   if (typeof reportId !== 'number') {
     throw Error('ID is not a number!!');
   }
+
   const report = await findReportById(reportId);
   if (!report) {
     throw Error('Report is not found!!');

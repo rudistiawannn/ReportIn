@@ -38,7 +38,6 @@ const sendReport = async (data, userId, _file) => {
 const findReportById = async (reportId) => {
   const reports = await prisma.reportData.findUnique({
     where: {
-      // eslint-disable-next-line radix
       id: reportId,
     },
     select: {
