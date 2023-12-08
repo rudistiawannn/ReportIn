@@ -5,6 +5,7 @@ import '../styles/news.css'
 import '../styles/detailNews.css';
 import '../styles/riwayat.css';
 import '../styles/faq.css';
+import '../styles/tentangKami.css';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
