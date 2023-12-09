@@ -1,8 +1,8 @@
 # ReportIn BackEnd
 + Framework : Express.Js
 + Architecture : REST API
-+ Layerred Architecture : Service Repository
 + ORM : Prisma
++ Layerred Architecture
 + RDBMS : PostgreSQL 16
 + Node Version : 20.10.0 LTS
 + Relationship : + [User] one-to-many [ReportData]
