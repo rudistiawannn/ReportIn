@@ -5,7 +5,7 @@
 + Layerred Architecture
 + RDBMS : PostgreSQL 16
 + Node Version : 20.10.0 LTS
-+ Relationship : + [User] one-to-many [ReportData]
++ Relationship : + [User] one-to-many [ReportData] && + [Role] one-to-many [User]
 
 # Resource API 
 + News : http://api.mediastack.com/v1/news?access_key=7758f217cec633bce32bce6f5835481e&countries=id&keywords=judi+online
@@ -17,11 +17,13 @@
 + EsLint
 + nodemon
 + multer
++ cookie-session
 
 # Update
 + CRUD report (patch method)
 + History report
 + Upload file (authenticate complete)
++ User register (role user)
 
 # Todo
 + Authentication : all feature

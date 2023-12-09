@@ -12,7 +12,7 @@ const {
   deletedReport,
   updatedReportById,
   getHistoryByUserId,
-} = require('../models/report.service');
+} = require('../service/report.service');
 
 const uploadFile = require('../middleware/report.midleware');
 
@@ -44,6 +44,7 @@ router.post('/:userId', uploadFile, async (req, res) => {
       status: 400,
       message: 'Report is not found!!',
     });
+    throw Error(error);
   }
 });
 

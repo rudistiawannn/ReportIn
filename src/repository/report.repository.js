@@ -16,7 +16,7 @@ const sendReport = async (data, userId, _file) => {
       subject: data.subject,
       description: data.description,
       file: _file,
-      name: {
+      username: {
         connect: {
           // eslint-disable-next-line radix
           id: userId,
@@ -28,7 +28,7 @@ const sendReport = async (data, userId, _file) => {
       subject: true,
       description: true,
       file: true,
-      name: true,
+      username: true,
       userId: true,
     },
   });
@@ -80,9 +80,9 @@ const findReportByUserId = async (_userId) => {
       userId: _userId,
     },
     select: {
-      name: true,
       subject: true,
       description: true,
+      file: true,
     },
   });
 
