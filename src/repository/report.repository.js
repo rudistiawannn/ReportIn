@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const prisma = require('../database/index');
+const prisma = require('../config/db.config');
 
 const findReport = () => {
   const getAllReport = prisma.user.findMany({
@@ -35,7 +35,7 @@ const sendReport = async (data, userId, _file) => {
   return createReport;
 };
 
-const findReportById = async (reportId) => {
+const findReportByReportId = async (reportId) => {
   const reports = await prisma.reportData.findUnique({
     where: {
       id: reportId,
@@ -74,10 +74,26 @@ const removeReport = async (reportId) => {
   return deleteReport;
 };
 
+const findReportByUserId = async (_userId) => {
+  const getReportByUserId = prisma.reportData.findMany({
+    where: {
+      userId: _userId,
+    },
+    select: {
+      name: true,
+      subject: true,
+      description: true,
+    },
+  });
+
+  return getReportByUserId;
+};
+
 module.exports = {
   findReport,
   sendReport,
-  findReportById,
+  findReportByReportId,
+  findReportByUserId,
   editReport,
   removeReport,
 };

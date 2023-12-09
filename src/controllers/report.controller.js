@@ -7,13 +7,14 @@ const router = express.Router();
 
 const {
   getAllReport,
-  getHistoryById,
+  getHistoryByReportId,
   createdReport,
   deletedReport,
   updatedReportById,
-} = require('./reportService');
+  getHistoryByUserId,
+} = require('../models/report.service');
 
-const uploadFile = require('./reportMidleware');
+const uploadFile = require('../middleware/report.midleware');
 
 router.get('/', async (req, res) => {
   try {
@@ -95,7 +96,7 @@ router.get('/:reportId', async (req, res) => {
     // if (reportId !== 'number') {
     //   return res.send('GAGAL');
     // }
-    const getHistory = await getHistoryById(reportId);
+    const getHistory = await getHistoryByReportId(reportId);
     if (!getHistory) {
       res.send({
         status: 400,
@@ -126,6 +127,25 @@ router.patch('/:reportId', async (req, res) => {
     res.status(400).send({
       status: 400,
       message: 'Report is not found!!',
+    });
+  }
+});
+
+router.get('/history/:userId', async (req, res) => {
+  try {
+    // eslint-disable-next-line radix
+    const userId = parseInt(req.params.userId);
+
+    const getHistory = await getHistoryByUserId(userId);
+    res.send({
+      data: getHistory,
+      status: 200,
+    });
+  } catch (error) {
+    res.status(400);
+    res.send({
+      message: 'Report is undefined!!',
+      data: 'cek',
     });
   }
 });
