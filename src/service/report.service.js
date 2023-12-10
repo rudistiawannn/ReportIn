@@ -6,10 +6,11 @@ const path = require('path');
 const {
   findReport,
   sendReport,
-  findReportById,
+  findReportByReportId,
+  findReportByUserId,
   editReport,
   removeReport,
-} = require('./reportRepository');
+} = require('../repository/report.repository');
 
 const getAllReport = async () => {
   const allReport = await findReport();
@@ -22,12 +23,12 @@ const createdReport = async (data, userId, _file) => {
   return createReport;
 };
 
-const getHistoryById = async (reportId) => {
+const getHistoryByReportId = async (reportId) => {
   if (typeof reportId !== 'number') {
     throw Error('ID is not a number!!');
   }
 
-  const report = await findReportById(reportId);
+  const report = await findReportByReportId(reportId);
   if (!report) {
     throw Error('Report is not found!!');
   }
@@ -35,7 +36,7 @@ const getHistoryById = async (reportId) => {
 };
 
 const deletedReport = async (reportId) => {
-  await getHistoryById(reportId);
+  await getHistoryByReportId(reportId);
 
   const deleteReport = await removeReport(reportId);
   return deleteReport;
@@ -48,7 +49,7 @@ const updatedReportById = async (newData, reportId) => {
 
 const diskStorage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, path.join(__dirname, '/assets'));
+    cb(null, path.join(__dirname, '../assets'));
   },
   filename(req, file, cb) {
     cb(
@@ -62,9 +63,26 @@ const diskStorage = multer.diskStorage({
 const filesFilter = (req, file, cb) => {
   const ext = path.extname(file.originalname);
   if (ext !== '.png' && ext !== '.jpg' && ext !== '.pdf' && ext !== '.jpeg') {
-    return cb(new Error('Invalid file extension!!'));
+    return cb(new Error('Invalid file extension!!', {
+      status: 400,
+      message: 'File extension is invalid!!',
+    }));
   }
   cb(null, true);
+};
+
+const getHistoryByUserId = (_userId) => {
+  const userId = _userId;
+
+  if (typeof userId !== 'number') {
+    throw Error('ID is not number!!');
+  }
+
+  const getHistory = findReportByUserId(userId);
+  if (!getHistory) {
+    throw Error('History is not found!!');
+  }
+  return getHistory;
 };
 
 module.exports = {
@@ -72,7 +90,8 @@ module.exports = {
   createdReport,
   deletedReport,
   updatedReportById,
-  getHistoryById,
+  getHistoryByReportId,
   diskStorage,
   filesFilter,
+  getHistoryByUserId,
 };
