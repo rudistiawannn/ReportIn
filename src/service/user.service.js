@@ -8,11 +8,7 @@ const getAllUser = async () => {
 };
 
 const createdUser = async (data) => {
-  let roleLevel = data.role;
-  if (roleLevel === '') {
-    roleLevel = 'user';
-  }
-  const createUser = addedUser(data, roleLevel);
+  const createUser = addedUser(data);
   return createUser;
 };
 

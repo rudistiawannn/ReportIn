@@ -1,18 +1,17 @@
 /* eslint-disable linebreak-style */
 const express = require('express');
-const reportController = require('../controllers/report.controller');
-const registerController = require('../controllers/user.controller');
+const reportRouter = require('./report.routes');
+const userRouter = require('./user.routes');
+const authRouter = require('./auth.routes');
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Ini halaman utama');
-});
+app.use('/auth', authRouter);
 
-app.use('/report', reportController);
+app.use('/user', userRouter);
 
-app.use('/user', registerController);
+app.use('/', reportRouter);
 
 module.exports = app;

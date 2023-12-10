@@ -2,9 +2,9 @@
 + Framework : Express.Js
 + Architecture : REST API
 + ORM : Prisma
-+ Layerred Architecture
 + RDBMS : PostgreSQL 16
 + Node Version : 20.10.0 LTS
++ Layerred Architecture (maybe:D)
 + Relationship : + [User] one-to-many [ReportData] && + [Role] one-to-many [User]
 
 # Resource API 
@@ -14,17 +14,20 @@
 # Tools
 + CORS
 + dotEnv
-+ EsLint
++ esLint
 + nodemon
 + multer
-+ cookie-session
++ http-errors
 
 # Update
 + CRUD report (patch method)
 + History report
 + Upload file (authenticate complete)
 + User register (role user)
++ Register
++ Login
++ Authentication : complete
++ Authorization :  complete
 
 # Todo
-+ Authentication : all feature
-+ Authorization :  all feature
++ finishing:D

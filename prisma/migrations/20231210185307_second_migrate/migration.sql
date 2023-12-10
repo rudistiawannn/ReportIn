@@ -2,10 +2,9 @@
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "email" TEXT NOT NULL,
-    "username" TEXT NOT NULL,
-    "gender" TEXT NOT NULL,
-    "age" INTEGER NOT NULL,
-    "roleLevel" TEXT NOT NULL,
+    "username" TEXT,
+    "password" TEXT NOT NULL,
+    "roleLevel" TEXT,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -36,7 +35,7 @@ CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 CREATE UNIQUE INDEX "Role_level_key" ON "Role"("level");
 
 -- AddForeignKey
-ALTER TABLE "User" ADD CONSTRAINT "User_roleLevel_fkey" FOREIGN KEY ("roleLevel") REFERENCES "Role"("level") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "User" ADD CONSTRAINT "User_roleLevel_fkey" FOREIGN KEY ("roleLevel") REFERENCES "Role"("level") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "ReportData" ADD CONSTRAINT "ReportData_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
