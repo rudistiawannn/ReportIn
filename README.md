@@ -17,6 +17,7 @@
 + esLint
 + nodemon
 + multer
++ JSON Web Token 
 + http-errors
 
 # Update
