@@ -31,4 +31,5 @@
 + Authorization :  complete
 
 # Todo
-+ finishing:D
++ installation to front-end application
++ deployment application 
