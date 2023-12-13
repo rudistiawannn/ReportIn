@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
   res.send('Ini halaman utama');
 });
 
-const productController = require('./report/reportController');
+const productController = require('./controllers/report.controller');
 
 app.use('/report', productController);
 
