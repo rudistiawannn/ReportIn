@@ -21,6 +21,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
+    "http-server": "^14.1.1",
     "style-loader": "^3.3.3",
     "swiper": "^11.0.5",
     "webpack": "^5.89.0",
