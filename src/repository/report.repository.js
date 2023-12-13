@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const prisma = require('../database/index');
+const prisma = require('../config/db.config');
 
 const findReport = () => {
   const getAllReport = prisma.user.findMany({
@@ -16,7 +16,7 @@ const sendReport = async (data, userId, _file) => {
       subject: data.subject,
       description: data.description,
       file: _file,
-      name: {
+      username: {
         connect: {
           // eslint-disable-next-line radix
           id: userId,
@@ -28,14 +28,14 @@ const sendReport = async (data, userId, _file) => {
       subject: true,
       description: true,
       file: true,
-      name: true,
+      username: true,
       userId: true,
     },
   });
   return createReport;
 };
 
-const findReportById = async (reportId) => {
+const findReportByReportId = async (reportId) => {
   const reports = await prisma.reportData.findUnique({
     where: {
       id: reportId,
@@ -74,10 +74,26 @@ const removeReport = async (reportId) => {
   return deleteReport;
 };
 
+const findReportByUserId = async (_userId) => {
+  const getReportByUserId = prisma.reportData.findMany({
+    where: {
+      userId: _userId,
+    },
+    select: {
+      subject: true,
+      description: true,
+      file: true,
+    },
+  });
+
+  return getReportByUserId;
+};
+
 module.exports = {
   findReport,
   sendReport,
-  findReportById,
+  findReportByReportId,
+  findReportByUserId,
   editReport,
   removeReport,
 };
