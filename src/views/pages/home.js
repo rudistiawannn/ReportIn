@@ -1,7 +1,9 @@
 // core version + navigation, pagination modules:
 import Swiper from 'swiper/bundle';
+import ReportResource from '../../scripts/data/report-source';
+import Swal from 'sweetalert2';
 
-import { landingPage, register } from "../templates/template-creator";
+import { landingPage, register, newsCard } from "../templates/template-creator";
 const Home = {
   async render() {
     return `
@@ -46,8 +48,58 @@ const Home = {
       }
     });
 
+    const slideContainer = document.querySelector('.swiper-wrapper');
+    const news = await ReportResource.getNews();
+    
+    console.log(news.data.posts.title);
+    news.data.posts.slice(0, 10).forEach((a) => {
+      slideContainer.innerHTML += newsCard(a);
+    });
+
     const registerContainer = document.querySelector(".register_container");
     registerContainer.innerHTML += register();
+
+    const registerForm = document.querySelector(".form");
+    registerForm.addEventListener('submit', async () => {
+      const nameInput = document.querySelector('#name');
+      const emailInput = document.querySelector('#email');
+      const passwordInput = document.querySelector('#password');
+
+      const registerInput = {
+        name: nameInput,
+        email: emailInput,
+        password: passwordInput,
+        role: "user"
+      }
+
+      try {
+        const response = await ReportResource.register(registerInput);
+    
+        if (response.status === 200) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Registration was successful!',
+            confirmButtonText: 'OK'
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Registration failed!',
+            confirmButtonText: 'OK'
+          });
+        }
+     } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Registration failed!',
+          confirmButtonText: 'OK'
+        });
+     }
+
+    })
   },
 };
 

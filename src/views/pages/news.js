@@ -1,4 +1,5 @@
 import { newsList } from "../templates/template-creator";
+import ReportResource from "../../scripts/data/report-source";
 
 const News = {
     async render() {
@@ -39,7 +40,13 @@ const News = {
    
     async afterRender() {
         const container = document.querySelector('.news_container');
-        container.innerHTML += newsList();
+
+        const news = await ReportResource.getNews();
+        console.log(news.data.posts);
+        news.data.posts.forEach(data => {
+          container.innerHTML += newsList(data);
+        });
+
     },
   };
    
