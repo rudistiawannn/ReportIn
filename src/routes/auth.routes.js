@@ -4,7 +4,7 @@ const user = require('../controllers/auth.controller');
 const auth = require('../middleware/auth.midleware');
 const verifyRegister = require('../middleware/verifyRegister.midleware');
 
-router.post('/', verifyRegister, user.register);
+router.post('/register', verifyRegister, user.register);
 
 router.post('/login', user.login);
 // all users guard
