@@ -27,7 +27,7 @@ class ReportController {
       const data = req.body;
       const file = req.file.path;
       // eslint-disable-next-line radix
-      const userId = parseInt(req.params.userId);
+      const userId = req.params.userId;
       const createReport = await createdReport(data, userId, file);
       res.send({
         message: 'Rerport is created!!',
@@ -45,7 +45,7 @@ class ReportController {
   static deleteReport = async (req, res) => {
     try {
       // eslint-disable-next-line radix
-      const reportId = parseInt(req.params.reportId);
+      const reportId = req.params.reportId;
       await deletedReport(reportId);
       res.send({
         message: 'Report is deleted',
@@ -87,7 +87,7 @@ class ReportController {
   static getHistoryByReport = async (req, res) => {
     try {
       // eslint-disable-next-line radix
-      const reportId = parseInt(req.params.reportId);
+      const reportId = req.params.reportId;
       const getHistory = await getHistoryByReportId(reportId);
       if (!getHistory) {
         res.send({
@@ -108,7 +108,7 @@ class ReportController {
     try {
       const data = req.body;
       // eslint-disable-next-line radix
-      const reportId = parseInt(req.params.reportId);
+      const reportId = req.params.reportId;
       const updateReport = await updatedReportById(data, reportId);
       res.send({
         message: 'Report has been updated',
@@ -126,7 +126,7 @@ class ReportController {
   static getHistoryByUser = async (req, res) => {
     try {
       // eslint-disable-next-line radix
-      const userId = parseInt(req.params.userId);
+      const userId = req.params.userId;
       const getHistory = await getHistoryByUserId(userId);
       res.send({
         data: getHistory,

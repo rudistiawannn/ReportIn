@@ -2,11 +2,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const createError = require('http-errors');
 const auth = require('../service/auth.service');
+// eslint-disable-next-line import/order
+const { v4: uuidv4 } = require('uuid');
 
 class authController {
   static register = async (req, res, next) => {
     try {
-      const user = await auth.register(req.body);
+      const user = await auth.register(uuidv4(), req.body);
       res.status(200).send({
         status: true,
         message: 'User created successfully',
