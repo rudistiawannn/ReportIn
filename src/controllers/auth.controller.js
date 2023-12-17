@@ -16,7 +16,7 @@ class authController {
         data: user,
       });
     } catch (e) {
-      next(e.message);
+      res.send('errno');
     }
   };
 
