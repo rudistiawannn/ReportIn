@@ -1,7 +1,7 @@
 // core version + navigation, pagination modules:
 import Swiper from 'swiper/bundle';
 import ReportResource from '../../scripts/data/report-source';
-import Swal from 'sweetalert2';
+import swal from 'sweetalert2';
 
 import { landingPage, register, newsCard } from "../templates/template-creator";
 const Home = {
@@ -76,14 +76,14 @@ const Home = {
         const response = await ReportResource.register(registerInput);
     
         if (response.status === 200) {
-          Swal.fire({
+          swal.fire({
             icon: 'success',
             title: 'Success',
             text: 'Registration was successful!',
             confirmButtonText: 'OK'
           });
         } else {
-          Swal.fire({
+          swal.fire({
             icon: 'error',
             title: 'Error',
             text: 'Registration failed!',
@@ -91,12 +91,13 @@ const Home = {
           });
         }
      } catch (error) {
-        Swal.fire({
+        swal.fire({
           icon: 'error',
           title: 'Error',
           text: 'Registration failed!',
           confirmButtonText: 'OK'
         });
+        console.log(error)
      }
 
     })

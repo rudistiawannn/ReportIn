@@ -1,5 +1,7 @@
 // core version + navigation, pagination modules:
 import {login} from '../templates/template-creator'
+import swal from 'sweetalert2';
+import ReportResource from "../../scripts/data/report-source";
 
 const Login = {
   async render() {
@@ -31,17 +33,17 @@ const Login = {
       }
 
       try {
-        const response = await ReportResource.Login(loginInput);
+        const response = await ReportResource.login(loginInput);
     
         if (response.status === 200) {
-          Swal.fire({
+          swal.fire({
             icon: 'success',
             title: 'Success',
             text: 'Berhasil Login!',
             confirmButtonText: 'OK'
           });
         } else {
-          Swal.fire({
+          swal.fire({
             icon: 'error',
             title: 'Error',
             text: 'Oppps Gagal Login',
@@ -49,12 +51,13 @@ const Login = {
           });
         }
      } catch (error) {
-        Swal.fire({
+        swal.fire({
           icon: 'error',
           title: 'Error',
           text: 'Oppps Login Gagal!',
           confirmButtonText: 'OK'
         });
+        console.log(error)
      }
 
     })
