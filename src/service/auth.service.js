@@ -16,7 +16,7 @@ class AuthService {
     if (roleLevel === '') {
       roleLevel = 'user';
     }
-    const user = addedUser(userId, data, roleLevel, password);
+    const user = await addedUser(userId, data, roleLevel, password);
     // eslint-disable-next-line no-param-reassign
     data.accessToken = await jwt.signAccessToken(user);
     return data;
