@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { v4: uuidv4 } = require('uuid');
 const prisma = require('../config/db.config');
 
 const findReport = () => {
@@ -13,6 +15,7 @@ const findReport = () => {
 const sendReport = async (data, userId, _file) => {
   const createReport = await prisma.reportData.create({
     data: {
+      id: uuidv4(),
       subject: data.subject,
       description: data.description,
       file: _file,
@@ -58,7 +61,7 @@ const editReport = async (newData, reportId) => {
     },
     where: {
       // eslint-disable-next-line radix
-      id: parseInt(reportId),
+      id: reportId,
     },
   });
   return updateReport;
@@ -68,7 +71,7 @@ const removeReport = async (reportId) => {
   const deleteReport = await prisma.reportData.delete({
     where: {
       // eslint-disable-next-line radix
-      id: parseInt(reportId),
+      id: reportId,
     },
   });
   return deleteReport;

@@ -24,10 +24,6 @@ const createdReport = async (data, userId, _file) => {
 };
 
 const getHistoryByReportId = async (reportId) => {
-  if (typeof reportId !== 'number') {
-    throw Error('ID is not a number!!');
-  }
-
   const report = await findReportByReportId(reportId);
   if (!report) {
     throw Error('Report is not found!!');
@@ -73,10 +69,6 @@ const filesFilter = (req, file, cb) => {
 
 const getHistoryByUserId = (_userId) => {
   const userId = _userId;
-
-  if (typeof userId !== 'number') {
-    throw Error('ID is not number!!');
-  }
 
   const getHistory = findReportByUserId(userId);
   if (!getHistory) {

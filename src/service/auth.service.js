@@ -10,13 +10,13 @@ const createError = require('http-errors');
 const { addedUser } = require('../repository/user.repository');
 
 class AuthService {
-  static async register(data) {
+  static async register(userId, data) {
     let roleLevel = data.role;
     const password = bcrypt.hashSync(data.password, 8);
     if (roleLevel === '') {
       roleLevel = 'user';
     }
-    const user = await addedUser(data, roleLevel, password);
+    const user = addedUser(userId, data, roleLevel, password);
     // eslint-disable-next-line no-param-reassign
     data.accessToken = await jwt.signAccessToken(user);
     return data;
@@ -35,8 +35,7 @@ class AuthService {
     const checkPassword = bcrypt.compareSync(password, user.password);
     if (!checkPassword) throw createError.Unauthorized('Email address or password not valid');
     delete user.password;
-    const accessToken = await jwt.signAccessToken(user);
-    return { ...user, accessToken };
+    return user;
   }
 
   static async all() {
