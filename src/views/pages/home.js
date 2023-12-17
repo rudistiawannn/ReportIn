@@ -60,7 +60,9 @@ const Home = {
     registerContainer.innerHTML += register();
 
     const registerForm = document.querySelector(".form");
-    registerForm.addEventListener('submit', async () => {
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      console.log("Register");
       const nameInput = document.querySelector('#name');
       const emailInput = document.querySelector('#email');
       const passwordInput = document.querySelector('#password');

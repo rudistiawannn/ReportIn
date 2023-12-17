@@ -1,5 +1,9 @@
 const Dashboard = {
     async render() {
+      const token = localStorage.getItem('accessToken');
+    if (!token) {
+      window.location.hash = '#/login';
+    }
       return `
       <div class="red">
       <h2>Layanan Aduan Situs Judi Online</h2>

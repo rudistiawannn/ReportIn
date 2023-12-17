@@ -30,6 +30,7 @@ class ReportResource {
     });
     const responseJson = await response.json();
     console.log(responseJson);
+    return responseJson;
   }
 
   static async getAllReport() {
