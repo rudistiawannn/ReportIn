@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 const cors = require('cors');
+const cookieSession = require('cookie-session');
 
 // Express is for building the Rest apis
 // cookie-session helps to stores the session data on the client within a cookie without requiring any database/resources on the server side
@@ -23,6 +24,14 @@ app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+app.use(
+  cookieSession({
+    name: 'bezkoder-session',
+    keys: ['COOKIE_SECRET'], // should use as secret environment variable
+    httpOnly: true,
+  }),
+);
 
 const routes = require('./routes/index.routes');
 

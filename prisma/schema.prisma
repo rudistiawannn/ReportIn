@@ -12,7 +12,7 @@ datasource db {
 }
 
 model User {
-  id         String       @unique
+  id         Int          @id @default(autoincrement())
   email      String       @unique
   username   String?
   password   String
@@ -22,16 +22,16 @@ model User {
 }
 
 model Role {
-  id    String @unique
+  id    Int    @id @default(autoincrement())
   level String @unique
   User  User[]
 }
 
 model ReportData {
-  id          String @unique
+  id          Int    @id @default(autoincrement())
   subject     String
   description String
   file        String
   username    User   @relation(fields: [userId], references: [id])
-  userId      String
+  userId      Int
 }

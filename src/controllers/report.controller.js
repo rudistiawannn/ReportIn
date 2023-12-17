@@ -27,10 +27,10 @@ class ReportController {
       const data = req.body;
       const file = req.file.path;
       // eslint-disable-next-line radix
-      const userId = req.params.userId;
+      const userId = parseInt(req.params.userId);
       const createReport = await createdReport(data, userId, file);
       res.send({
-        message: 'Rerport has been successfull created!!',
+        message: 'Rerport is created!!',
         data: createReport,
       });
     } catch (error) {
@@ -45,10 +45,10 @@ class ReportController {
   static deleteReport = async (req, res) => {
     try {
       // eslint-disable-next-line radix
-      const reportId = req.params.reportId;
+      const reportId = parseInt(req.params.reportId);
       await deletedReport(reportId);
       res.send({
-        message: 'Report has been successfull deleted',
+        message: 'Report is deleted',
         status: 200,
       });
     } catch (error) {
@@ -72,7 +72,7 @@ class ReportController {
       }
       const updateReport = await updatedReportById(data, reportId);
       res.send({
-        message: 'Report has been successfull updated',
+        message: 'Report has been updated',
         data: updateReport,
         status: 200,
       });
@@ -87,7 +87,7 @@ class ReportController {
   static getHistoryByReport = async (req, res) => {
     try {
       // eslint-disable-next-line radix
-      const reportId = req.params.reportId;
+      const reportId = parseInt(req.params.reportId);
       const getHistory = await getHistoryByReportId(reportId);
       if (!getHistory) {
         res.send({
@@ -108,10 +108,10 @@ class ReportController {
     try {
       const data = req.body;
       // eslint-disable-next-line radix
-      const reportId = req.params.reportId;
+      const reportId = parseInt(req.params.reportId);
       const updateReport = await updatedReportById(data, reportId);
       res.send({
-        message: 'Report has been successfull updated',
+        message: 'Report has been updated',
         data: updateReport,
         status: 200,
       });
@@ -126,7 +126,7 @@ class ReportController {
   static getHistoryByUser = async (req, res) => {
     try {
       // eslint-disable-next-line radix
-      const userId = req.params.userId;
+      const userId = parseInt(req.params.userId);
       const getHistory = await getHistoryByUserId(userId);
       res.send({
         data: getHistory,
@@ -135,8 +135,8 @@ class ReportController {
     } catch (error) {
       res.status(400);
       res.send({
-        status: 400,
         message: 'Report is undefined!!',
+        data: 'cek',
       });
     }
   };
