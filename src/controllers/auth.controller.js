@@ -16,11 +16,7 @@ class authController {
         data: user,
       });
     } catch (e) {
-      next(res.status(500).json({
-        status: 'error',
-        code: 500,
-        message: 'Internal Server Error',
-      }));
+      next(e.message);
     }
   };
 
