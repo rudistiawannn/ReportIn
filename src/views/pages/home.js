@@ -63,21 +63,22 @@ const Home = {
     registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       console.log("Register");
-      const nameInput = document.querySelector('#name');
-      const emailInput = document.querySelector('#email');
-      const passwordInput = document.querySelector('#password');
+      const nameInput = document.querySelector('#name').value;
+      const emailInput = document.querySelector('#email').value;
+      const passwordInput = document.querySelector('#password').value;
 
       const registerInput = {
-        name: nameInput,
+        username: nameInput,
         email: emailInput,
         password: passwordInput,
         role: "user"
       }
+      console.log(registerInput);
 
       try {
         const response = await ReportResource.register(registerInput);
     
-        if (response.status === 200) {
+        if (response.status) {
           swal.fire({
             icon: 'success',
             title: 'Success',

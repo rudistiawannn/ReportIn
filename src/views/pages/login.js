@@ -1,5 +1,7 @@
 // core version + navigation, pagination modules:
 import {login} from '../templates/template-creator'
+import Swal from 'sweetalert2';
+import ReportResource from '../../scripts/data/report-source';
 
 const Login = {
   async render() {
@@ -34,7 +36,7 @@ const Login = {
       try {
         const response = await ReportResource.login(loginInput);
     
-        if (response.status === 200) {
+        if (response.status) {
           Swal.fire({
             icon: 'success',
             title: 'Success',
@@ -45,7 +47,7 @@ const Login = {
           localStorage.setItem('accessToken', JSON.stringify(response.data.accessToken));
           window.location.href = '#/dashboard'
         } else {
-          swal.fire({
+          Swal.fire({
             icon: 'error',
             title: 'Error',
             text: `${response}`,
@@ -54,7 +56,7 @@ const Login = {
           console.log(response);
         }
      } catch (error) {
-        swal.fire({
+        Swal.fire({
           icon: 'error',
           title: 'Error',
           text: `'Oppps undifined!'`,
