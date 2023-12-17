@@ -30,7 +30,7 @@ class ReportController {
       const userId = req.params.userId;
       const createReport = await createdReport(data, userId, file);
       res.send({
-        message: 'Rerport is created!!',
+        message: 'Rerport has been successfull created!!',
         data: createReport,
       });
     } catch (error) {
@@ -48,7 +48,7 @@ class ReportController {
       const reportId = req.params.reportId;
       await deletedReport(reportId);
       res.send({
-        message: 'Report is deleted',
+        message: 'Report has been successfull deleted',
         status: 200,
       });
     } catch (error) {
@@ -72,7 +72,7 @@ class ReportController {
       }
       const updateReport = await updatedReportById(data, reportId);
       res.send({
-        message: 'Report has been updated',
+        message: 'Report has been successfull updated',
         data: updateReport,
         status: 200,
       });
@@ -111,7 +111,7 @@ class ReportController {
       const reportId = req.params.reportId;
       const updateReport = await updatedReportById(data, reportId);
       res.send({
-        message: 'Report has been updated',
+        message: 'Report has been successfull updated',
         data: updateReport,
         status: 200,
       });
@@ -135,8 +135,8 @@ class ReportController {
     } catch (error) {
       res.status(400);
       res.send({
+        status: 400,
         message: 'Report is undefined!!',
-        data: 'cek',
       });
     }
   };
