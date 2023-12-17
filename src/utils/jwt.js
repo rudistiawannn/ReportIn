@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const createError = require('http-errors');
 require('dotenv').config();
 
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || 'adnifuaw3br398bf892b398293h89nj';
+const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
 module.exports = {
   signAccessToken(payload) {
     return new Promise((resolve, reject) => {
