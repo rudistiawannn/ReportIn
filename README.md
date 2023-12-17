@@ -18,6 +18,7 @@
 + nodemon
 + multer
 + http-errors
++ UUID
 
 # Update
 + CRUD report (patch method)
@@ -28,6 +29,7 @@
 + Login
 + Authentication : complete
 + Authorization :  complete
++ UUID
 
 # Todo
 + finishing:D
