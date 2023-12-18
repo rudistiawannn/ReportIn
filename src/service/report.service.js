@@ -24,10 +24,6 @@ const createdReport = async (data, userId, _file) => {
 };
 
 const getHistoryByReportId = async (reportId) => {
-  if (typeof reportId !== 'number') {
-    throw Error('ID is not a number!!');
-  }
-
   const report = await findReportByReportId(reportId);
   if (!report) {
     throw Error('Report is not found!!');
@@ -49,6 +45,7 @@ const updatedReportById = async (newData, reportId) => {
 
 const diskStorage = multer.diskStorage({
   destination(req, file, cb) {
+    // cb(null, path.join(__dirname, '../../dist'));
     cb(null, path.join(__dirname, '../../../../../tmp'));
   },
   filename(req, file, cb) {
@@ -73,10 +70,6 @@ const filesFilter = (req, file, cb) => {
 
 const getHistoryByUserId = (_userId) => {
   const userId = _userId;
-
-  if (typeof userId !== 'number') {
-    throw Error('ID is not number!!');
-  }
 
   const getHistory = findReportByUserId(userId);
   if (!getHistory) {

@@ -1,38 +1,41 @@
 -- CreateTable
 CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "username" TEXT,
     "password" TEXT NOT NULL,
-    "roleLevel" TEXT,
-
-    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+    "roleLevel" TEXT
 );
 
 -- CreateTable
 CREATE TABLE "Role" (
-    "id" SERIAL NOT NULL,
-    "level" TEXT NOT NULL,
-
-    CONSTRAINT "Role_pkey" PRIMARY KEY ("id")
+    "id" TEXT NOT NULL,
+    "level" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "ReportData" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "subject" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "file" TEXT NOT NULL,
-    "userId" INTEGER NOT NULL,
-
-    CONSTRAINT "ReportData_pkey" PRIMARY KEY ("id")
+    "userId" TEXT NOT NULL
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_id_key" ON "User"("id");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Role_id_key" ON "Role"("id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Role_level_key" ON "Role"("level");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "ReportData_id_key" ON "ReportData"("id");
 
 -- AddForeignKey
 ALTER TABLE "User" ADD CONSTRAINT "User_roleLevel_fkey" FOREIGN KEY ("roleLevel") REFERENCES "Role"("level") ON DELETE SET NULL ON UPDATE CASCADE;

@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+// eslint-disable-next-line import/no-extraneous-dependencies
 const prisma = require('../config/db.config');
 
 const findReport = () => {
@@ -58,7 +59,7 @@ const editReport = async (newData, reportId) => {
     },
     where: {
       // eslint-disable-next-line radix
-      id: parseInt(reportId),
+      id: reportId,
     },
   });
   return updateReport;
@@ -68,7 +69,7 @@ const removeReport = async (reportId) => {
   const deleteReport = await prisma.reportData.delete({
     where: {
       // eslint-disable-next-line radix
-      id: parseInt(reportId),
+      id: reportId,
     },
   });
   return deleteReport;
