@@ -105,32 +105,20 @@ const detailNewsTemplate = () => `
 
 `
 
-const riwayatTemplate = () =>`
+const riwayatTemplate = (data) =>`
 <div class="card_riwayat">
 <div class="riwayat_tgl">
-<p class="tgl">17 februari 2023</p>
+<p class="tgl">${data.subject}</p>
 </div>
 <div class="riwayat_detail">
-<p class="riwayat_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+<p class="riwayat_title">${data.description}
 </p>
 </div>
 <div class="riwayat_img">
-    <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" alt="">
+    <img src="${data.file}" alt="">
 </div>
 </div>
 
-<div class="card_riwayat">
-<div class="riwayat_tgl">
-<p class="tgl">17 februari 2023</p>
-</div>
-<div class="riwayat_detail">
-<p class="riwayat_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-</p>
-</div>
-<div class="riwayat_img">
-    <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" alt="">
-</div>
-</div>
 `
 
 const faqTemplate = () =>`

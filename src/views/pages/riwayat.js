@@ -1,4 +1,5 @@
 import { riwayatTemplate } from "../templates/template-creator";
+import ReportResource from "../../scripts/data/report-source";
 const Riwayat = {
     async render() {
       return `
@@ -36,7 +37,14 @@ const Riwayat = {
    
     async afterRender() {
       const registerContainer = document.querySelector(".content_riwayat");
-      registerContainer.innerHTML += riwayatTemplate();
+
+      const id = localStorage.getItem('idUser');
+      const history = await ReportResource.getHistory(id);
+      console.log(history);
+      history.data.forEach(data => {
+      registerContainer.innerHTML += riwayatTemplate(data);
+      });
+       
     },
   };
    
