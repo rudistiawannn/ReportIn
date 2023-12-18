@@ -22,17 +22,17 @@ class AuthService {
   }
 
   static async login(data) {
-    const { email, password } = data;
-    const user = await prisma.user.findFirst({
-      where: {
-        email,
-        password,
-      },
-    });
-    if (!user) {
-      throw createError.NotFound('User not registered');
-    }
-    return user;
+    return data;
+    // const user = await prisma.user.findFirst({
+    //   where: {
+    //     email,
+    //     password,
+    //   },
+    // });
+    // if (!user) {
+    //   throw createError.NotFound('User not registered');
+    // }
+    // return user;
   }
 
   static async all() {
