@@ -41,11 +41,10 @@ class authController {
         accessToken,
       });
     } catch (e) {
-      next(res.status(500).json({
-        status: 'error',
-        code: 500,
-        message: 'Internal Server Error',
-      }));
+      next(res.send({
+        status: 401,
+        message: 'Email address or password it\'s not valid',
+      }).status(401));
     }
   };
 

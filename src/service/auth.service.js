@@ -1,11 +1,12 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/order */
+/* eslint-disable import/no-extraneous-dependencies */
 const prisma = require('../config/db.config');
 
+const jwt = require('../utils/jwt');
 require('dotenv').config();
 const bcrypt = require('bcryptjs');
-const jwt = require('../utils/jwt');
-// const createError = require('http-errors');
+const createHttpError = require('http-errors');
 const { addedUser } = require('../repository/user.repository');
 
 class AuthService {
@@ -22,17 +23,19 @@ class AuthService {
   }
 
   static async login(data) {
-    return data;
-    // const user = await prisma.user.findFirst({
-    //   where: {
-    //     email,
-    //     password,
-    //   },
-    // });
-    // if (!user) {
-    //   throw createError.NotFound('User not registered');
-    // }
-    // return user;
+    const { email } = data;
+    const user = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+    if (!user) {
+      throw createHttpError.NotFound('User not registered');
+    }
+    const checkPassword = bcrypt.compareSync(data.password, user.password);
+    if (!checkPassword) throw createHttpError.Unauthorized('Email address or password not valid');
+    delete user.password;
+    return user;
   }
 
   static async all() {
