@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable prefer-const */
 /* eslint-disable import/no-extraneous-dependencies */
 // eslint-disable-next-line import/order
 const { v4: uuidv4 } = require('uuid');
