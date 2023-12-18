@@ -26,7 +26,7 @@ class authController {
 
   static login = async (req, res, next) => {
     try {
-      const data = await req.body;
+      const data = await auth.login(req.body);
       let session;
       session = req.session;
       session.userId = data.id;
