@@ -36,7 +36,6 @@ class AuthService {
     if (!checkPassword) {
       throw createError.Unauthorized('Email address or password not valid');
     }
-    delete user.password;
     return user;
   }
 
