@@ -8,9 +8,9 @@ const jwt = require('../utils/jwt');
 const auth = require('../service/auth.service');
 
 class authController {
-  static register = async (req, res, next) => {
+  static register = (req, res, next) => {
     try {
-      const user = await auth.register(uuidv4(), req.body);
+      const user = auth.register(uuidv4(), req.body);
       res.status(200).send({
         status: true,
         message: 'User created successfully',
