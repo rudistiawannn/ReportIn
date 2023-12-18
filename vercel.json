@@ -2,8 +2,7 @@
     "builds": [
         {
             "src": "./dist",
-            "use": "@vercel/node",
-            "command": "npm run build"
+            "use": "@vercel/node"
         }
     ],
     "routes": [
