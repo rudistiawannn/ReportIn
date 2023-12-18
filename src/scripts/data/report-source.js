@@ -41,18 +41,23 @@ class ReportResource {
   }
 
   static async addReport(inputData, id) {
+    const formData = new FormData();
+    formData.append('subject', inputData.subject);
+    formData.append('description', inputData.description);
+    formData.append('file', inputData.file);
+  
     const response = await fetch(API_ENDPOINT.REPORT(id), {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(inputData),
+      body: formData,
     });
+  
     const responseJson = await response.json();
     console.log(responseJson);
+    return responseJson;
   }
+  
 
-  static async addReport(inputData, id) {
+  static async UpdateReport(inputData, id) {
     const response = await fetch(API_ENDPOINT.REPORT(id), {
       method: 'PUT',
       headers: {
