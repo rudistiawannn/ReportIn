@@ -23,19 +23,19 @@ class AuthService {
   }
 
   static async login(data) {
-    const { email, password } = data;
-    const user = await prisma.user.findFirst({
-      where: {
-        email,
-      },
-    });
-    if (!user) {
-      throw createError.NotFound('User not registered');
-    }
-    const checkPassword = bcrypt.compareSync(password, user.password);
-    if (!checkPassword) throw createError.Unauthorized('Email address or password not valid');
-    delete user.password;
-    return user;
+    return data;
+    // const user = await prisma.user.findFirst({
+    //   where: {
+    //     email,
+    //   },
+    // });
+    // if (!user) {
+    //   throw createError.NotFound('User not registered');
+    // }
+    // const checkPassword = bcrypt.compareSync(password, user.password);
+    // if (!checkPassword) throw createError.Unauthorized('Email address or password not valid');
+    // delete user.password;
+    // return user;
   }
 
   static async all() {
