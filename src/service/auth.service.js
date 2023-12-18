@@ -5,7 +5,7 @@ const prisma = require('../config/db.config');
 require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const jwt = require('../utils/jwt');
-const createError = require('http-errors');
+// const createError = require('http-errors');
 const { addedUser } = require('../repository/user.repository');
 
 class AuthService {
