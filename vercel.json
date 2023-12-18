@@ -1,0 +1,15 @@
+{
+    "builds": [
+        {
+            "src": "./dist",
+            "use": "@vercel/node",
+            "command": "npm run build"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/dist"
+        }
+    ]
+}
