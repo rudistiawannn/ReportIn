@@ -32,7 +32,7 @@ class AuthService {
     if (!user) {
       throw createError.NotFound('User not registered');
     }
-    const checkPassword = bcrypt.compareSync(password, user.password);
+    const checkPassword = bcrypt.compareSync(user.password, password);
     if (!checkPassword) throw createError.Unauthorized('Email address or password not valid');
     delete user.password;
     return user;
