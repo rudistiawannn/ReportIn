@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/order */
-/* eslint-disable import/no-extraneous-dependencies */
 const prisma = require('../config/db.config');
 
 require('dotenv').config();
