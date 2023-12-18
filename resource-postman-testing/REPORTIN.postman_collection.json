@@ -47,7 +47,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -55,12 +55,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/675ec6d2-91a5-45dc-a0d3-c151dbc95297",
+									"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
-										"675ec6d2-91a5-45dc-a0d3-c151dbc95297"
+										"b7a3deea-92e4-473c-9443-459c1634fe57"
 									]
 								}
 							},
@@ -74,7 +74,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -136,6 +136,24 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/auth/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -147,7 +165,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -171,7 +189,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -218,7 +236,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -235,12 +253,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/2da316c8-fc28-4f52-87be-d50841eca151",
+							"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"2da316c8-fc28-4f52-87be-d50841eca151"
+								"b7a3deea-92e4-473c-9443-459c1634fe57"
 							]
 						}
 					},
@@ -249,6 +267,16 @@
 				{
 					"name": "patchReport",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -261,12 +289,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/2da316c8-fc28-4f52-87be-d50841eca151",
+							"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"2da316c8-fc28-4f52-87be-d50841eca151"
+								"b7a3deea-92e4-473c-9443-459c1634fe57"
 							]
 						}
 					},
@@ -275,6 +303,16 @@
 				{
 					"name": "postReport2",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -317,7 +355,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -325,12 +363,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/675ec6d2-91a5-45dc-a0d3-c151dbc95297",
+							"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"675ec6d2-91a5-45dc-a0d3-c151dbc95297"
+								"b7a3deea-92e4-473c-9443-459c1634fe57"
 							]
 						}
 					},
@@ -344,7 +382,406 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/history/{{idUser}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"history",
+								"{{idUser}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DEPLOYMENT",
+			"item": [
+				{
+					"name": "ADMIN",
+					"item": [
+						{
+							"name": "postRegister",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"zainals\",\r\n    \"email\" : \"zainals@gmail.com\",\r\n    \"password\" : \"hystoria21\",\r\n    \"role\" : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getHistoryByReportId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"b7a3deea-92e4-473c-9443-459c1634fe57"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllUser",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiMzY0ZmRhNDItYzY2Zi00Mzk2LWIxMTUtNmJiODNhMGZjYTFkIiwiZW1haWwiOiJ6YWluYWxzYXB1dHJhMTFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiAxIiwicm9sZUxldmVsIjoiYWRtaW4ifSwiaWF0IjoxNzAyNzUwOTU0fQ.jvx94OOMMDkpWTdgGu2x6i2vx8aBXvKX3QQBIChPXfk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "postLogin",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"zainalsaputra11@gmail.com\",\r\n    \"password\" : \"hystoria21\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/auth/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getAllReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "laporan dari polres Batu",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "laporan bersifat rahasia",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ethic/Downloads/wp24659562.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\" : \"edit 2\",\r\n    \"description\" : \"edited 2\",\r\n    \"file\" : \"ini.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"b7a3deea-92e4-473c-9443-459c1634fe57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\" : \"edit 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"b7a3deea-92e4-473c-9443-459c1634fe57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postReport2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "laporan judi online",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "terdapat jejak perjudian di platform A",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ethic/Downloads/wp4924004.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{idUser}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{idUser}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/b7a3deea-92e4-473c-9443-459c1634fe57",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"b7a3deea-92e4-473c-9443-459c1634fe57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHistoryByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]

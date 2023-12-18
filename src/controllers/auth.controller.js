@@ -27,6 +27,9 @@ class authController {
   static login = async (req, res, next) => {
     try {
       const data = await auth.login(req.body);
+      let session;
+      session = req.session;
+      session.userId = data.id;
       const accessToken = await jwt.signAccessToken(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
       res.cookie('accessToken', accessToken, {
         httpOnly: true,

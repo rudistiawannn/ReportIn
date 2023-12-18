@@ -6,11 +6,11 @@ const jwt = require('jsonwebtoken');
 const createError = require('http-errors');
 require('dotenv').config();
 
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
+const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || 'adnifuaw3br398bf892b398293h89nj';
 module.exports = {
   signAccessToken(payload) {
     return new Promise((resolve, reject) => {
-      jwt.sign({ payload }, accessTokenSecret, {
+      jwt.sign(payload, accessTokenSecret, {
       }, (err, token) => {
         if (err) {
           reject(createError.InternalServerError());
