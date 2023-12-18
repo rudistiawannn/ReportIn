@@ -2,10 +2,10 @@
 const prisma = require('../config/db.config');
 
 // eslint-disable-next-line consistent-return
-const verifyRegister = async (req, res, next) => {
+const verifyRegister = (req, res, next) => {
   try {
     // Username
-    let user = await prisma.user.findFirst({
+    let user = prisma.user.findFirst({
       where: {
         username: req.body.username,
       },
@@ -17,7 +17,7 @@ const verifyRegister = async (req, res, next) => {
     }
 
     // Email
-    user = await prisma.user.findFirst({
+    user = prisma.user.findFirst({
       where: {
         email: req.body.email,
       },
