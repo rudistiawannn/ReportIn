@@ -16,11 +16,10 @@ class authController {
         data: user,
       });
     } catch (e) {
-      next(res.status(500).json({
-        status: 'error',
-        code: 500,
-        message: 'Internal Server Error',
-      }));
+      next(res.send({
+        status: 401,
+        message: 'Account has already resigtered!!',
+      }).status(401));
     }
   };
 
@@ -36,14 +35,14 @@ class authController {
       });
       res.status(200).send({
         status: true,
-        message: 'Account login successful',
+        message: 'Account login successful!!',
         data,
         accessToken,
       });
     } catch (e) {
       next(res.send({
         status: 401,
-        message: 'Email address or password it\'s not valid',
+        message: 'Email address or password it\'s not valid!!',
       }).status(401));
     }
   };
