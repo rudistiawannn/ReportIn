@@ -24,7 +24,7 @@ class AuthService {
 
   static async login(data) {
     const { email, password } = data;
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findFirst({
       where: {
         email,
       },
